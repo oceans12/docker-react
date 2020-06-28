@@ -1,0 +1,12 @@
+language: generic
+sudo: required
+services:
+  - docker # we need a copy of a docker
+
+before_install: #steps before deploying project and running test
+  - docker build -t docker_react -f Dockerfile.dev .
+
+script: # all commands that needs to be executed to run our tests
+  - docker run -e CI=true USERNAME/docker-react npm run test -- --coverage
+  
+
