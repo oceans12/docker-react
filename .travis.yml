@@ -9,4 +9,3 @@ before_install: #steps before deploying project and running test
 script: # all commands that needs to be executed to run our tests
   - docker run -e CI=true USERNAME/docker-react npm run test -- --coverage
   
-
